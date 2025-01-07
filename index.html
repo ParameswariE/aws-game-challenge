@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game Enhanced</title>
+    <link rel="stylesheet" href="styles/snake_game.css">
+</head>
+<body>
+    <!-- Introduction Page -->
+    <div id="introPage" class="intro-page">
+        <div class="intro-content">
+            <img src="assets/images/introduction.jpg" alt="Adventure Snake" class="story-image">
+            <p>
+                Welcome to the thrilling world of <b>Feed the Snake</b>, a vibrant and unpredictable realm where a daring snake
+                embarks on an epic journey of survival and glory! Your mission? <b>Guide the snake to greatness by feeding
+                it, growing stronger, and conquering challenges.</b>
+            </p>
+            <p>
+                But beware—this isn’t just a stroll in the park! The path is littered with <b>treacherous obstacles,
+                mischievous traps</b>, and a ticking timer that will test your speed and wit.
+                Watch out for <b>rocks that block your way, mushrooms that flip your controls,</b>
+                and the sly <b>poison eggs</b> that threaten to shrink your progress.
+            </p>
+            <p>
+                Only the bravest and smartest players can navigate this chaotic maze, collecting delicious <b>apples</b> for
+                growth and scoring big by catching the elusive <b>rat</b> for bonus points. With each level, the stakes
+                rise higher<b>—faster gameplay, tougher challenges, and more cunning obstacles</b> await.
+            </p>
+            <p>
+                Will you rise to the occasion and become the ultimate hero of Pixel Plains? Test your skills, embrace
+                the challenge, and dive into the most exhilarating snake adventure you've ever played.<br>
+
+                <b>The clock is ticking. The snake is waiting. The adventure begins now! 🎮</b>
+            </p>
+            <h1>How to Play</h1>
+            <ul>
+                <li><b>Navigate with Precision:</b> Use the <b>arrow keys</b> to control the snake’s
+                    movements and guide it on its thrilling journey.</li>
+                <li><b>Feast on Apples:</b> Eating an apple will make your snake grow longer and boost your score.
+                    Apples are your key to success—don’t miss them!</li>
+                <li><b>Dodge the Rocks:</b> Rocks are deadly obstacles. Crashing into them ends your adventure,
+                    so stay sharp and maneuver carefully!</li>
+                <li><b>Mushroom Madness:</b> Dare to eat a mushroom? It will reverse your controls for <b>5 seconds,</b>
+                    creating a wild challenge! However, it’s worth it—your score will soar
+                    without increasing the snake’s size.</li>
+                <li><b>Chase the Rat:</b> Rats are rare and rewarding! Catch one to earn <b>extra points</b> and
+                    watch your snake grow even larger. Don't let them escape!</li>
+                <li><b>Beware the Egg:</b> Eggs may look harmless, but they are dangerous!
+                    Eating one will shrink your snake and cost you <b>2 points.</b> Steer clear to survive!</li>
+            </ul>
+            <p>The Challenge Increases As you progress through the levels, the game becomes faster,
+                with more obstacles to navigate. Stay focused and test your skills in this escalating adventure!</p>
+            <p>Good luck and enjoy the excitement of the Feed the Snake adventure! 🐍</p>
+            <button id="startGameButton" class="start-game-btn">Start Game</button>
+        </div>
+    </div>
+
+
+    <!-- Game Content (Initially Hidden) -->
+    <div id="gameContent" style="display: none;">
+        <!-- Start Game Modal -->
+        <div id="startGameModal" class="modal">
+            <div class="modal-content">
+                <h1>Snake Game</h1>
+                <label for="playerName">Enter your name:</label>
+                <input type="text" id="playerName" placeholder="Your Name" />
+                <p>Select a difficulty to start the game:</p>
+                <button class="difficulty" data-speed="150">Easy</button>
+                <button class="difficulty" data-speed="100">Medium</button>
+                <button class="difficulty" data-speed="50">Hard</button>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div id="gameContainer">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboard">
+            <h3>Leaderboard</h3>
+            <ul id="leaderboardList"></ul>
+        </div>
+
+        <!-- Level Display -->
+        <div id="levelDisplay" class="level-display">Level 1</div>
+
+        <!-- Game Over Modal -->
+        <div id="gameOverModal" style="display: none; text-align: center;">
+            <h2>Game Over!</h2>
+            <p><span id="playerNameDisplay"></span></p>
+            <p>Your Final Score <span id="finalScore">0</span></p>
+            <div style="margin-top: 20px;">
+                <button id="retryButton">Retry</button>
+                <button id="quitButton">Quit</button>
+            </div>
+        </div>
+
+        <!-- Pause and Resume Button -->
+        <div class="control-container">
+            <button id="pauseResumeButton" class="control">Pause</button>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer-container">
+            <video id="timerVideo" muted autoplay loop>
+                <source src="assets/images/timer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div id="reverseTimer" class="reverse-timer"></div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="eatSound" src="assets/audios/eat.mp3"></audio>
+    <audio id="gameOverSound" src="assets/audios/failure.wav"></audio>
+    <audio id="levelUpSound" src="assets/audios/level-up.aiff"></audio>
+    <audio id="poisonSound" src="assets/audios/poison.aiff"></audio>
+
+    <script src="scripts/snake_game.js"></script>
+</body>
+</html>
+
