@@ -11,4 +11,5 @@ frontend:
     files:
       - '**/*'
   cache:
-    paths: []
+    paths:
+      - backend/node_modules/**/*
