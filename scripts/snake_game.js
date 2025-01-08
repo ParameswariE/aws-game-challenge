@@ -3,7 +3,7 @@ document.getElementById("introPage").style.display = "flex";
 
 // Load the background image
 const backgroundImage = new Image();
-backgroundImage.src = "assets/images/background.png"; // Replace with the correct path to your background image
+backgroundImage.src = "./assets/images/background.png"; // Replace with the correct path to your background image
 
 const foodImages = {
     apple: new Image(),
@@ -13,11 +13,11 @@ const foodImages = {
     rock: new Image(),  // Rock as an obstacle
 };
 
-foodImages.apple.src = "assets/images/apple.png";
-foodImages.mushroom.src = "assets/images/mushroom.png";
-foodImages.rat.src = "assets/images/rat-2.png";
-foodImages.egg.src = "assets/images/egg.png";
-foodImages.rock.src = "assets/images/rocks.png"; // Add rock image path
+foodImages.apple.src = "./assets/images/apple.png";
+foodImages.mushroom.src = "./assets/images/mushroom.png";
+foodImages.rat.src = "./assets/images/rat-2.png";
+foodImages.egg.src = "./assets/images/egg.png";
+foodImages.rock.src = "./assets/images/rocks.png"; // Add rock image path
 
 let playerName = ""; // Player's name
 let speed = 100; // Speed of the game (in milliseconds)
