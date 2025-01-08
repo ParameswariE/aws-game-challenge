@@ -110,3 +110,38 @@ To run the game locally:
     cd backend
     node server.js
 3. Open **index.html** in a browser
+
+## Deploy to AWS Amplify Console
+### 1. Open Amplify Console
+1. Go to the [AWS Management Console](https://aws.amazon.com/console/).
+2. Search for **"Amplify"** and open the Amplify Console.
+
+### 2. Host Your Web App
+1. Click **"New app"** → **"Host web app"**.
+2. Choose **GitHub** as the repository source.
+3. Authenticate with GitHub (if required).
+4. Select your **Snake Game repository** and choose the branch (e.g., `main`).
+
+### 3. Configure Build Settings
+1. Create an `amplify.yml` file in your project root with the following content:
+   ```yaml
+   version: 1
+   frontend:
+     phases:
+       build:
+         commands:
+           - cd backend         # Change to the backend directory
+           - npm install        # Install dependencies in the backend directory
+           - node server.js     # Start the server
+     artifacts:
+       baseDirectory: /
+       files:
+         - '**/*'
+     cache:
+       paths:
+           - backend/node_modules/**/*
+
+### 4. Click Next, then Save and deploy
+
+![Snake Game](./assets/Readme_img/amplify-console.png
+    "AWS Amplify")
