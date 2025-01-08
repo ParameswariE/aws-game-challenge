@@ -1,0 +1,14 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands: 
+        - cd backend
+        - npm install
+        - node server.js
+  artifacts:
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []
