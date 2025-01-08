@@ -142,7 +142,7 @@ canvas {
     height: 600px;
     border: 10px solid brown; /* Add a border around the container */
     border-radius: 15px; /* Rounded corners */
-    background-image: url('assets/images/background.png'); /* Replace with your background image file */
+    background-image: url('./assets/images/background.png'); /* Replace with your background image file */
     background-size: cover; /* Make the image cover the container */
     background-position: center; /* Center the image */
     margin: 20px auto; /* Center the container horizontally */
